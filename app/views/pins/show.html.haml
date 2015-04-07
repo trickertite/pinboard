@@ -7,6 +7,9 @@ submitted by
 = @pin.user.email
 
 %br/
+= link_to like_pin_path(@pin), method: :put, class: 'btn btn-default' do
+	%span.glyphicon.glyphicon-heart
+		= @pin.get_upvotes.size
 = link_to 'Back', root_path
 = link_to 'Edit', edit_pin_path
 = link_to 'Delete', pin_path, method: :delete, data: { confirm: 'Are you sure' }
